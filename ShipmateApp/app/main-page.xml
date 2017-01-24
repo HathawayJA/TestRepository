@@ -1,0 +1,62 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:map="nativescript-mapbox" loaded="pageLoaded">
+  <TabView>
+    <TabView.items>
+      <TabViewItem title="About">
+        <TabViewItem.view>
+          <ScrollView>
+            <StackLayout cssClass="tab-content">
+              <Image margin="10" src="~/res/telerik-logo.png" />
+              <Label text="Mapbox plugin demo" cssClass="title"/>
+              <Label text="Awesome platform independent OpenGL powered maps by Mapbox. Make sure you provide your own (free) 'accessToken' in main-view-model.js or unexpected things will happen." textWrap="true"/>
+            </StackLayout>
+          </ScrollView>
+        </TabViewItem.view>
+      </TabViewItem>
+      <TabViewItem title="By XML">
+        <TabViewItem.view>
+          <GridLayout columns="*, *" rows="120, *, 120" horizontalAlignment="stretch" cssClass="tab-content">
+
+          </GridLayout>
+        </TabViewItem.view>
+      </TabViewItem>
+      <TabViewItem title="By Code">
+        <TabViewItem.view>
+          <GridLayout columns="*, *, *, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto" horizontalAlignment="stretch" cssClass="tab-content">
+
+            <Button row="0" colSpan="2" text="show" tap="{{ doShow }}" cssClass="button" />
+            <Button row="0" col="2"  text="hide" tap="{{ doHide }}" cssClass="button" />
+            <Button row="0" col="3"  text="unhide" tap="{{ doUnhide }}" cssClass="button" />
+
+            <Button row="1" colSpan="2" text="get center" tap="{{ doGetCenter }}" cssClass="button" />
+            <Button row="1" col="2" colSpan="2"  text="set center" tap="{{ doSetCenter }}" cssClass="button" />
+
+            <Button row="2" colSpan="2" text="get zoom level" tap="{{ doGetZoomLevel }}" cssClass="button" />
+            <Button row="2" col="2" colSpan="2"  text="set zoom level" tap="{{ doSetZoomLevel }}" cssClass="button" />
+
+            <Button row="3" colSpan="2" text="get viewport" tap="{{ doGetViewport }}" cssClass="button" />
+            <Button row="3" col="2" colSpan="2"  text="set viewport" tap="{{ doSetViewport }}" cssClass="button" />
+
+            <Button row="4" colSpan="2" text="add 3 markers" tap="{{ doAddMarkers }}" cssClass="button" />
+            <Button row="4" col="2" colSpan="2"  text="animate camera" tap="{{ doAnimateCamera }}" cssClass="button" />
+
+            <Button row="5" colSpan="2" text="remove 2 markers" tap="{{ doRemove2Markers }}" cssClass="button" />
+            <Button row="5" col="2" colSpan="2" text="remove all markers" tap="{{ doRemoveAllMarkers }}" cssClass="button" />
+
+            <Button row="6" colSpan="2" text="Android: tilt" tap="{{ doSetTilt }}" cssClass="button" />
+            <Button row="6" col="2" colSpan="2" text="Android: polygon" tap="{{ doAddPolygon }}" cssClass="button" />
+
+            <Button row="7" colSpan="2" text="DL Amsterdam" tap="{{ doDownloadAmsterdam }}" cssClass="button button-offline" />
+            <Button row="7" col="2" colSpan="2"  text="DL current view" tap="{{ doDownloadCurrentViewportAsOfflineRegion }}" cssClass="button button-offline" />
+
+            <Button row="8" colSpan="2" text="Del Amsterdam" tap="{{ doDeleteOfflineRegion }}" cssClass="button button-offline" />
+            <Button row="8" col="2" colSpan="2"  text="List downloaded" tap="{{ doListOfflineRegions }}" cssClass="button button-offline" />
+
+            <Button row="9" colSpan="2"  text="location perm?" tap="{{ doCheckHasFineLocationPermission }}" cssClass="button button-permissions" />
+            <Button row="9" col="2" colSpan="2"  text="ask permission" tap="{{ doRequestFineLocationPermission }}" cssClass="button button-permissions" />
+
+          </GridLayout>
+        </TabViewItem.view>
+      </TabViewItem>
+    </TabView.items>
+  </TabView>
+</Page>

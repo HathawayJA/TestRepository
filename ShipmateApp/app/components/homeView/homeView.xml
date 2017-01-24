@@ -1,0 +1,56 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" 
+    xmlns:map="nativescript-mapbox" loaded="pageLoaded" id="homeViewScreen" cssClass="screen">
+
+<TabView id="tabList">
+<TabView.items>
+
+<TabViewItem title="Login" id="loginTab">
+    <TabViewItem.view>
+        <StackLayout orientation="vertical" cssClass="tab-content" >
+            <Image margin="10" src="~/res/shipmatelogo.png" />
+            <TextView hint ="USNA Email" id="email_field"/>
+            <TextView secure="true" hint="Password" id="pass_field"/>
+            <Button text = "Login" cssClass="button" id="login_button" />
+            </StackLayout>
+    </TabViewItem.view>
+</TabViewItem>
+
+<TabViewItem title="Request" id="requestTab">
+<TabViewItem.view>
+<ScrollView>
+<StackLayout cssClass="tab-content">
+    <Image margin="10" src="~/res/shipmatelogo.png" />
+    <Button text="Request" id="requestButton" cssClass="button" />
+    <Label id="locationLabel" />
+</StackLayout>
+</ScrollView>
+</TabViewItem.view>
+</TabViewItem>
+
+
+<TabViewItem title="The Map" id="mapTab">
+<TabViewItem.view>
+
+<GridLayout horizontalAlignment="stretch" cssClass="tab-content">
+<ContentView row ="0">
+<map:Mapbox
+delay="6000"
+latitude="38.9784"
+longitude="-76.4922"
+zoomLevel="12"
+mapStyle="streets"
+hideCompass="false"
+showUserLocation = "true"
+accessToken="sk.eyJ1IjoiZWRkeXZlcmJydWdnZW4iLCJhIjoia1JpRW82NCJ9.OgnvpsKzB3GJhzyofQNUBw"
+id="map">
+</map:Mapbox>
+
+</ContentView>
+
+</GridLayout>
+
+</TabViewItem.view>
+</TabViewItem>
+</TabView.items>
+</TabView>
+</Page>
